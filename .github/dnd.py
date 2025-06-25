@@ -107,13 +107,25 @@ if __name__ == "__main__":
     for cls in classes:
         best_attrs = ", ".join(best_attributes.get(cls, []))
         print(f"{cls}: {best_attrs}")
+    print("\nDit script toont de beschikbare DnD classes.")
+    print("Het toont ook de beschikbare races, attributen en de beste attributen per class.")
+    # Vraag de gebruiker om een class te kiezen
+    print("\nMaak een nieuw DnD karakter aan!")
+    print("Kies een class uit de volgende opties:")
+    for idx, cls in enumerate(classes, 1):
+        print(f"{idx}. {cls}")
+    class_choice = int(input("Voer het nummer van de gewenste class in: ")) - 1
+    chosen_class = classes[class_choice]
 
-    # Infinite loop to cast fireball
-    print("\nCasting infinite fireballs! (Press Ctrl+C to stop)")
-    try:
-        count = 1
-        while True:
-            print(f"Fireball cast #{count}!")
-            count += 1
-    except KeyboardInterrupt:
-        print("\nStopped casting fireballs.")
+    # Vraag de gebruiker om een ras te kiezen
+    print("\nKies een ras uit de volgende opties:")
+    for idx, race in enumerate(races, 1):
+        print(f"{idx}. {race}")
+    race_choice = int(input("Voer het nummer van het gewenste ras in: ")) - 1
+    chosen_race = races[race_choice]
+
+    # Toon de beste attributen voor de gekozen class
+    print(f"\nJe hebt gekozen voor een {chosen_race} {chosen_class}.")
+    print("Beste attributen voor deze class:")
+    for attr in best_attributes[chosen_class]:
+        print(f"- {attr}")
