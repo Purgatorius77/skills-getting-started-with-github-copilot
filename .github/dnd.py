@@ -129,3 +129,19 @@ if __name__ == "__main__":
     print("Beste attributen voor deze class:")
     for attr in best_attributes[chosen_class]:
         print(f"- {attr}")
+
+        # Toon de standaard ability scores in DnD 5e
+        print("\nStandaard ability scores in DnD 5e (point buy):")
+        standard_scores = [15, 14, 13, 12, 10, 8]
+        for score in standard_scores:
+            print(score)
+
+        # Suggestie voor toewijzing van ability scores aan attributen op basis van de gekozen class
+        print("\nSuggestie voor toewijzing van ability scores aan attributen:")
+        # Sorteer de attributen: eerst de beste attributen voor de class, daarna de rest
+        sorted_attributes = best_attributes[chosen_class] + [attr for attr in attributes if attr not in best_attributes[chosen_class]]
+        # Sorteer de scores van hoog naar laag
+        sorted_scores = sorted(standard_scores, reverse=True)
+        # Koppel de hoogste scores aan de belangrijkste attributen
+        for attr, score in zip(sorted_attributes, sorted_scores):
+            print(f"{attr}: {score}")
