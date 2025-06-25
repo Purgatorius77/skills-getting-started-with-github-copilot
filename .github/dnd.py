@@ -65,3 +65,36 @@ if __name__ == "__main__":
         for race in races:
             print(f"{cls} - {race}")
 
+    print("\nDnD karakter attributen:")
+    attributes = [
+        "Strength",
+        "Dexterity",
+        "Constitution",
+        "Intelligence",
+        "Wisdom",
+        "Charisma"
+    ]
+    for attr in attributes:
+        print(attr)
+
+        # Suggest best fitting attributes for each class
+        print("\nBeste attributen per class:")
+        best_attributes = {
+        "Barbarian": ["Strength", "Constitution"],
+        "Bard": ["Charisma", "Dexterity"],
+        "Cleric": ["Wisdom", "Strength"],
+        "Druid": ["Wisdom", "Constitution"],
+        "Fighter": ["Strength", "Constitution"],
+        "Monk": ["Dexterity", "Wisdom"],
+        "Paladin": ["Strength", "Charisma"],
+        "Ranger": ["Dexterity", "Wisdom"],
+        "Rogue": ["Dexterity", "Intelligence"],
+        "Sorcerer": ["Charisma", "Constitution"],
+        "Warlock": ["Charisma", "Constitution"],
+        "Wizard": ["Intelligence", "Wisdom"]
+        }
+        for cls in classes:
+        attrs = ", ".join(best_attributes.get(cls, []))
+        best_attrs = ", ".join(best_attributes.get(cls, []))
+        print(f"{cls} - {race} (Beste attributen: {best_attrs})")
+
