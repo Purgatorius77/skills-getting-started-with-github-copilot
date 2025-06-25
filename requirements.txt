@@ -1,6 +1,2 @@
 fastapi
 uvicorn
-test
-test
-sync
-test
