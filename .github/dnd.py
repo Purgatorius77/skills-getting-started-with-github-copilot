@@ -107,3 +107,13 @@ if __name__ == "__main__":
     for cls in classes:
         best_attrs = ", ".join(best_attributes.get(cls, []))
         print(f"{cls}: {best_attrs}")
+
+    # Infinite loop to cast fireball
+    print("\nCasting infinite fireballs! (Press Ctrl+C to stop)")
+    try:
+        count = 1
+        while True:
+            print(f"Fireball cast #{count}!")
+            count += 1
+    except KeyboardInterrupt:
+        print("\nStopped casting fireballs.")
