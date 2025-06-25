@@ -3,3 +3,4 @@ uvicorn
 test
 test
 sync
+test
